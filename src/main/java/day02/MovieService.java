@@ -18,6 +18,7 @@ public class MovieService {
     }
 
     public int movieByMaxLength() {
-        return movies.stream().max(Comparator.comparing(o-> o.getLength())).get().getLength();
+//        return movies.stream().max(Comparator.comparing(o-> o.getLength())).get().getLength();
+        return movies.stream().mapToInt(Movie::getLength).max().orElseThrow(() -> new IllegalStateException("Üres lista"));
     }
 }
