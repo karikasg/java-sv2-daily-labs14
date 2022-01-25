@@ -13,7 +13,6 @@ public class MovieService {
     }
 
     public List<Movie> moviesByActor(String actor) {
-        List<Movie> result = new ArrayList<>();
         return movies.stream().filter(o -> o.getActors().contains(actor)).collect(Collectors.toList());
     }
 
